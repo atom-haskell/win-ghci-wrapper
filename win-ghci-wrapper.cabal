@@ -1,0 +1,26 @@
+name:                win-ghci-wrapper
+version:             0.1.0.0
+synopsis:            A stupid wrapper to allow sending remote interrupt to GHCi on Windows
+description:         Please see README.md
+homepage:            https://github.com/atom-haskell/win-ghci-wrapper#readme
+license:             MIT
+license-file:        LICENSE.md
+author:              Nikolay "Lierdakil" Yakimov
+maintainer:          root@livid.pp.ru
+copyright:           2016 Nikolay "Lierdakil" Yakimov
+category:            Compatibility
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+executable cmd
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -optl-static -optl-pthread -static
+  build-depends:       base
+                     , process
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/atom-haskell/win-ghci-wrapper
