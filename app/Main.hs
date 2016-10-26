@@ -5,7 +5,6 @@ import System.Environment
 import System.IO
 import System.Exit
 import Control.Concurrent
-import Control.Monad (filterM)
 
 proc' :: FilePath -> [String] -> CreateProcess
 proc' cmd args = CreateProcess {  cmdspec = RawCommand cmd args,
@@ -29,8 +28,7 @@ main = do
   (Just pin, _, _, pHandle) <- createProcess $ proc' cmd args
   hSetBuffering pin NoBuffering
   hSetBuffering stdin NoBuffering
-  forkIO $ do
-    hGetContents stdin >>= mapM_ (f pHandle pin)
+  forkIO $ getContents >>= mapM_ (f pHandle pin)
   waitForProcess pHandle >>= exitWith
   where
     f h i '\x03' = interruptProcessGroupOf h
