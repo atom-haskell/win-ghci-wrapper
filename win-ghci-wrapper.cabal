@@ -13,7 +13,7 @@ build-type:          Simple
 -- extra-source-files:
 cabal-version:       >=1.10
 
-executable cmd
+executable ghci-wrapper
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N -optl-static -optl-pthread -static
