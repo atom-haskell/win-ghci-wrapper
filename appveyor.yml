@@ -9,7 +9,7 @@ environment:
     STACK_ROOT: "c:\\sr"
 
 before_build:
-- appveyor DownloadFile http://www.stackage.org/stack/windows-i386 -FileName stack.zip
+- appveyor DownloadFile https://get.haskellstack.org/stable/windows-x86_64.zip -FileName stack.zip
 - 7z x stack.zip stack.exe
 - stack setup > nul
 
