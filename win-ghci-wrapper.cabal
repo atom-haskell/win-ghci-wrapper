@@ -1,5 +1,5 @@
 name:                win-ghci-wrapper
-version:             0.0.1
+version:             0.0.2
 synopsis:            A stupid wrapper to allow sending remote interrupt to GHCi on Windows
 description:         Please see README.md
 homepage:            https://github.com/atom-haskell/win-ghci-wrapper#readme
